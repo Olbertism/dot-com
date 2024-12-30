@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: KyivType, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@font-face {
+  font-family: KyivType;
+  src: url('./fonts/KyivTypeSansRegular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: KyivType light;
+  font-weight: 200;
+  src: url('./fonts/KyivTypeSansLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: KyivType;
+  font-weight: bold;
+  src: url('./fonts/KyivTypeSansBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: KyivType medium;
+  font-weight: 500;
+  src: url('./fonts/KyivTypeSansMedium.otf') format('opentype');
+}
