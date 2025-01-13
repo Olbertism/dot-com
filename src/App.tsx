@@ -1,10 +1,20 @@
-import { useState } from 'react';
 import { NavBar } from './components/NavBar.tsx';
-import { Outlet, Route, Routes } from 'react-router';
+import { Route, Routes } from 'react-router';
 import { Resume } from './pages/Resume.tsx';
 import { Blog } from './pages/Blog.tsx';
 import { Contact } from './pages/Contact.tsx';
 import { Footer } from './components/Footer.tsx';
+import { LandingPage } from './pages/LandingPage.tsx';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+import {
+  fas,
+  faLayerGroup,
+  faLanguage,
+} from '@fortawesome/free-solid-svg-icons';
+
+library.add(fas, faLayerGroup, faLanguage);
 
 function App() {
   return (
@@ -24,9 +34,9 @@ function App() {
           >
             <NavBar />
           </div>
-          <div className={'h-full overflow-auto'}>
+          <div className={'h-full overflow-auto grow'}>
             <Routes>
-              <Route index element={<App />} />
+              <Route path={'/*'} index element={<LandingPage />} />
               <Route path="resume" element={<Resume />} />
               <Route path="blog" element={<Blog />} />
               <Route path="contact" element={<Contact />} />

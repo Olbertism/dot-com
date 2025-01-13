@@ -4,7 +4,7 @@ export const Footer: FC = () => {
   return (
     <div
       className={
-        'border-black border-t-2 md:border-t-0 md:border-l-2 basis-1/12 flex md:flex-col'
+        'border-black border-t-2 md:border-t-0 md:border-l-2 basis-1/12 md:max-w-16 flex md:flex-col'
       }
     >
       <div
