@@ -8,7 +8,7 @@ export const NavBar: FC = () => {
         to="resume"
         className={({ isActive }) =>
           (isActive ? 'active bg-orange ' : '') +
-          'hover:bg-orange h-full md:w-full w-9 flex flex-col justify-end md:justify-center border-black border-b-2 md:border-r-2 md:border-b-0 md:pl-1'
+          'hover:bg-orange h-full md:h-[calc(3rem-2px)] md:w-full w-[calc(2.25rem-2px)] flex flex-col justify-end md:justify-center border-black border-b-2 md:border-r-2 md:border-b-0 md:pl-1'
         }
       >
         <p className={'-rotate-90 md:rotate-0 pl-3'}>resume</p>
@@ -18,7 +18,7 @@ export const NavBar: FC = () => {
         to="blog"
         className={({ isActive }) =>
           (isActive ? 'active bg-blue ' : '') +
-          'hover:bg-blue h-full md:w-full w-9 flex flex-col justify-end md:justify-center border-black border-b-2 md:border-r-2 md:border-b-0 md:pl-1'
+          'hover:bg-blue h-full md:h-[calc(3rem-2px)] md:w-full w-[calc(2.25rem-2px)] flex flex-col justify-end md:justify-center border-black border-b-2 md:border-r-2 md:border-b-0 md:pl-1'
         }
       >
         <p className={'-rotate-90 md:rotate-0 pl-3'}>blog</p>
@@ -28,7 +28,7 @@ export const NavBar: FC = () => {
         to="contact"
         className={({ isActive }) =>
           (isActive ? 'active bg-green ' : '') +
-          'hover:bg-green h-full md:w-full w-9 flex flex-col justify-end md:justify-center border-black border-b-2 md:border-b-0 md:border-r-2 md:pl-1'
+          'hover:bg-green h-full md:h-[calc(3rem-2px)] md:w-full w-[calc(2.25rem-2px)] flex flex-col justify-end md:justify-center border-black border-b-2 md:border-b-0 md:border-r-2 md:pl-1'
         }
       >
         <p className={'-rotate-90 md:rotate-0 pl-3'}>contact</p>

@@ -4,7 +4,7 @@ export const Contact: FC = () => {
   return (
     <article className={'md:h-full'}>
       <div className={'flex'}>
-        <h1 className={'md:hidden mx-auto'}>contact</h1>
+        <h1 className={'md:hidden mx-auto leading-loose'}>contact</h1>
       </div>
       <div className="grid md:grid-cols-3 md:h-full">
         <div className="md:col-span-2">
