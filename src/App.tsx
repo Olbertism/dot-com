@@ -9,12 +9,11 @@ import { LandingPage } from './pages/LandingPage.tsx';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
-  fas,
   faLayerGroup,
   faLanguage,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(fas, faLayerGroup, faLanguage);
+library.add(faLayerGroup, faLanguage);
 
 function App() {
   return (

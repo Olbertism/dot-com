@@ -305,7 +305,7 @@ export const Resume: FC = () => {
         <div className="md:col-span-2 border-black border-t-2">
           <div className={'p-2'}>
             <div className={'2xl:flex 2xl:justify-end'}>
-              <h2 className={'2xl:w-[66%]'}>other & trivia</h2>
+              <h2 className={'2xl:w-[66%]'}>other &amp; trivia</h2>
             </div>
             <ResumeSection
               faIconName={'fa-solid fa-layer-group'}
