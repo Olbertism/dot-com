@@ -1,19 +1,18 @@
-import { NavBar } from './components/NavBar.tsx';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faHome,
+  faLanguage,
+  faLayerGroup,
+} from '@fortawesome/free-solid-svg-icons';
 import { Route, Routes } from 'react-router';
-import { Resume } from './pages/Resume.tsx';
+import { Footer } from './components/Footer.tsx';
+import { NavBar } from './components/NavBar.tsx';
 import { Blog } from './pages/Blog.tsx';
 import { Contact } from './pages/Contact.tsx';
-import { Footer } from './components/Footer.tsx';
 import { LandingPage } from './pages/LandingPage.tsx';
+import { Resume } from './pages/Resume.tsx';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-
-import {
-  faLayerGroup,
-  faLanguage,
-} from '@fortawesome/free-solid-svg-icons';
-
-library.add(faLayerGroup, faLanguage);
+library.add(faLayerGroup, faLanguage, faHome);
 
 function App() {
   return (

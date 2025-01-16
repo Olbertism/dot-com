@@ -1,6 +1,6 @@
+import classNames from 'classnames';
 import { FC, useMemo, useState } from 'react';
 import { ResumeSection } from '../components/ResumeSection.tsx';
-import classNames from 'classnames';
 
 export const Resume: FC = () => {
   const [contactButtonClicked, setContactButtonClicked] = useState(false);
@@ -183,7 +183,7 @@ export const Resume: FC = () => {
   return (
     <article className={'h-full'}>
       <div className={'flex'}>
-        <h1 className={'md:hidden mx-auto leading-loose'}>resume</h1>
+        <h1 className={'md:hidden mx-auto leading-loose text-3xl'}>resume</h1>
       </div>
       <div className="grid md:grid-cols-3">
         <div className="md:col-span-2">
@@ -220,7 +220,7 @@ export const Resume: FC = () => {
               alt={'resume picture of Albert Pichler'}
             />
             <div className={'flex flex-col justify-evenly basis-2/3 px-3'}>
-              <h2 className={'mx-auto leading-loose'}>Albert Pichler</h2>
+              <h2 className={'mx-auto leading-loose text-xl md:text-2xl'}>Albert Pichler</h2>
               <div className={'m-auto flex flex-col gap-2'}>
                 <div className={'flex'}>
                   <div
@@ -231,7 +231,7 @@ export const Resume: FC = () => {
                   >
                     <button
                       className={
-                        'border-black border-2 bg-white px-2 py-1 relative z-20'
+                        'border-black border-2 bg-white px-2 py-1 relative z-20 text-sm md:text-base'
                       }
                       onClick={() =>
                         setContactButtonClicked((prevState) => !prevState)
@@ -242,7 +242,7 @@ export const Resume: FC = () => {
 
                     <div
                       className={classNames(
-                        'border-black border-b-2 border-l-2 border-r-2 px-2 py-1 absolute top-0 w-full infobox',
+                        'text-sm md:text-base border-black border-b-2 border-l-2 border-r-2 px-2 py-1 absolute top-0 w-full infobox',
                         contactButtonClicked ? 'box-slide' : '',
                       )}
                     >

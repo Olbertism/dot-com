@@ -21,7 +21,6 @@
     @apply underline;
     @apply underline-offset-4;
     @apply font-bold;
-    @apply hover:text-grey
   }
   /* ... */
 }
