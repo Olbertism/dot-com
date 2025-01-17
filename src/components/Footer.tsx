@@ -1,3 +1,4 @@
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FC } from 'react';
 import { Link } from 'react-router';
@@ -27,7 +28,7 @@ export const Footer: FC = () => {
         }
       >
         <a href={'https://www.linkedin.com/in/albert-pichler/'} target={'_blank'} rel={'noopener'} className={'md:m-auto'}>
-          <svg className={'w-8 h-8 text-grey hover:cursor-pointer fill-grey hover:fill-black'} viewBox="0 0 72 72">
+          <svg className={'w-7 h-7 text-grey hover:cursor-pointer fill-grey hover:fill-black'} viewBox="0 0 72 72">
             <g fill-rule="evenodd">
               <path
                 d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z"
@@ -40,7 +41,7 @@ export const Footer: FC = () => {
           </svg>
         </a>
         <a href={'https://github.com/Olbertism/'} target={'_blank'} rel={'noopener'} className={'md:m-auto'}>
-          <svg className={'w-8 h-8 text-grey hover:cursor-pointer fill-grey hover:fill-black'} viewBox="0 0 1024 1024">
+          <svg className={'w-7 h-7 text-grey hover:cursor-pointer fill-grey hover:fill-black'} viewBox="0 0 1024 1024">
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -49,6 +50,9 @@ export const Footer: FC = () => {
             />
           </svg>
         </a>
+        {/* <div>
+          <FontAwesomeIcon icon={faMoon} className={'w-8 h-8 text-grey hover:cursor-pointer'} />
+        </div> */}
       </div>
     </div>
   );

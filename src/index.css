@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  main {
+    @apply text-sm;
+    @apply md:text-base;
+  }
   h2 {
     @apply text-2xl;
-    @apply mt-2;
+    @apply [&:not(:first-child)]:mt-2;
   }
   h3 {
     @apply text-lg;
@@ -16,6 +20,7 @@
   ul {
     @apply list-disc;
     @apply list-outside;
+    @apply space-y-1;
   }
   a {
     @apply underline;
@@ -49,11 +54,13 @@ h1 {
 
 .infobox-area {
   transition: height 0.25s linear;
-  height: 4rem;
+  height: 3.5rem;
+  @apply md:h-[4rem];
 }
 
 .area-expand {
-  height: 8rem;
+  height: 6rem;
+  @apply md:h-[8rem];
   transition: height 0.25s ease-in;
 }
 

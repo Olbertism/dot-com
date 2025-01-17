@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { FC, useMemo, useState } from 'react';
+import { ContactBox } from '../components/ContactBox.tsx';
 import { ResumeSection } from '../components/ResumeSection.tsx';
 
 export const Resume: FC = () => {
@@ -8,7 +9,7 @@ export const Resume: FC = () => {
   const ResumeSections3Binfra = useMemo(() => {
     return (
       <>
-        <div>
+        <div className='space-y-1'>
           <h4>software developer</h4>
           <p>2022/11 - 2025/01</p>
           <ul>
@@ -38,7 +39,7 @@ export const Resume: FC = () => {
   const ResumeSectionsNexxar = useMemo(() => {
     return (
       <>
-        <div>
+        <div className='space-y-1'>
           <h4>software developer</h4>
           <p>2022/07 - 2022/10</p>
           <ul>
@@ -47,7 +48,7 @@ export const Resume: FC = () => {
             </li>
           </ul>
         </div>
-        <div>
+        <div className='space-y-1'>
           <h4>senior project manager</h4>
           <p>2021/01 - 2022/07</p>
           <ul>
@@ -58,7 +59,7 @@ export const Resume: FC = () => {
             </li>
           </ul>
         </div>
-        <div>
+        <div className='space-y-1'>
           <h4>project manager</h4>
           <p>2017/10 - 2021/01</p>
           <ul>
@@ -74,7 +75,7 @@ export const Resume: FC = () => {
   const ResumeSectionsUnivie = useMemo(() => {
     return (
       <>
-        <div>
+        <div className='space-y-1'>
           <h4>BA + MA slavonic studies</h4>
           <p>2010/10 - 2017/10</p>
           <ul>
@@ -91,7 +92,7 @@ export const Resume: FC = () => {
   const ResumeSectionUpleveled = useMemo(() => {
     return (
       <>
-        <div>
+        <div className='space-y-1'>
           <h4>full stack web development bootcamp</h4>
           <p>2022/04 - 2022/07</p>
           <ul>
@@ -111,7 +112,7 @@ export const Resume: FC = () => {
   const ResumeSectionTraumzeugen = useMemo(() => {
     return (
       <>
-        <div>
+        <div className='space-y-1'>
           <h4>video creation and editing (self-employed)</h4>
           <p>2017/11 - 2018/10</p>
           <ul>
@@ -128,11 +129,11 @@ export const Resume: FC = () => {
   const ResumeSectionMIT = useMemo(() => {
     return (
       <>
-        <div>
+        <div className='space-y-1'>
           <h4>introduction to computational thinking and data science</h4>
           <p>2020</p>
         </div>
-        <div>
+        <div className='space-y-1'>
           <h4>introduction to computer science and programming using python</h4>
           <p>2020</p>
         </div>
@@ -143,7 +144,7 @@ export const Resume: FC = () => {
   const ResumeSectionCS50 = useMemo(() => {
     return (
       <>
-        <div>
+        <div className='space-y-1'>
           <h4>cs50's introduction to computer science</h4>
           <p>2020</p>
         </div>
@@ -154,7 +155,7 @@ export const Resume: FC = () => {
   const ResumeSectionTech = useMemo(() => {
     return (
       <>
-        <div>
+        <div className='space-y-1'>
           <ul>
             <li>
               javascript, typescript, react, node, python, c#, html+css,
@@ -169,7 +170,7 @@ export const Resume: FC = () => {
   const ResumeSectionLanguages = useMemo(() => {
     return (
       <>
-        <div>
+        <div className='space-y-1'>
           <ul>
             <li>german - native</li>
             <li>english - fluent</li>
@@ -182,7 +183,7 @@ export const Resume: FC = () => {
 
   return (
     <article className={'h-full'}>
-      <div className={'flex'}>
+      <div className={'flex border-black border-b-2 md:hidden'}>
         <h1 className={'md:hidden mx-auto leading-loose text-3xl'}>resume</h1>
       </div>
       <div className="grid md:grid-cols-3">
@@ -213,59 +214,30 @@ export const Resume: FC = () => {
           </div>
         </div>
         <div className={'row-start-1 md:row-start-auto bg-green min-h-12'}>
-          <div className={'flex flex-row-reverse md:flex-col justify-evenly'}>
-            <img
-              className={'w-44 h-44 md:w-auto md:h-auto lg:max-w-80 md:mx-auto'}
-              src={'../../me_sm.jpg'}
-              alt={'resume picture of Albert Pichler'}
-            />
-            <div className={'flex flex-col justify-evenly basis-2/3 px-3'}>
-              <h2 className={'mx-auto leading-loose text-xl md:text-2xl'}>Albert Pichler</h2>
-              <div className={'m-auto flex flex-col gap-2'}>
-                <div className={'flex'}>
-                  <div
-                    className={classNames(
-                      'm-auto w-[85%] relative infobox-area',
-                      contactButtonClicked ? 'area-expand' : '',
-                    )}
-                  >
-                    <button
-                      className={
-                        'border-black border-2 bg-white px-2 py-1 relative z-20 text-sm md:text-base'
-                      }
-                      onClick={() =>
-                        setContactButtonClicked((prevState) => !prevState)
-                      }
-                    >
-                      {`click to ${contactButtonClicked ? 'hide' : 'show'} contact information`}
-                    </button>
+          <div className={'flex flex-row-reverse md:flex-col'}>
+            <div className='min-w-44 min-h-44 lg:flex lg:border-black lg:border-b-2'>
+              <img
+                className={'w-44 h-44 grow md:w-auto md:h-auto lg:w-44 lg:h-44 lg:max-w-80 md:mx-auto lg:basis-1/3 lg:shrink lg:border-black lg:border-r-2'}
+                src={'../../me_sm.jpg'}
+                alt={'resume picture of Albert Pichler'}
+              />
+              <div className='hidden lg:block lg:basis-2/3 lg:grow lg:bg-blue' />
+            </div>
 
-                    <div
-                      className={classNames(
-                        'text-sm md:text-base border-black border-b-2 border-l-2 border-r-2 px-2 py-1 absolute top-0 w-full infobox',
-                        contactButtonClicked ? 'box-slide' : '',
-                      )}
-                    >
-                      <p>
-                        mail: {contactButtonClicked ? 'abcdefg@mail.com' : ''}
-                      </p>
-                      <p>phone: {contactButtonClicked ? '0000' : ''}</p>
-                    </div>
-                  </div>
+            <div className={'flex flex-col justify-evenly basis-2/3 px-3 py-2 md:gap-2'}>
+              <h2 className={'mx-auto leading-loose text-xl md:text-2xl'}>Albert Pichler</h2>
+              <div className={'m-auto flex flex-col gap-2 md:gap-3'}>
+                <div className={'px-3'}>
+                  <ContactBox />
                 </div>
                 <div className={'flex'}>
-                  <a href={'#'} target={'_blank'} className={'m-auto'}>
+                  <a href={'https://github.com/Olbertism/'} target={'_blank'} rel='noopener' className={'m-auto hover:decoration-2'}>
                     <span>→</span> github portfolio
                   </a>
                 </div>
                 <div className={'flex'}>
-                  <a href={'#'} target={'_blank'} className={'m-auto'}>
+                  <a href={'https://www.linkedin.com/in/albert-pichler/'} rel='noopener' target={'_blank'} className={'m-auto hover:decoration-2'}>
                     <span>→</span> linkedIn
-                  </a>
-                </div>
-                <div>
-                  <a className="relative after:bg-orange after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer hover:no-underline">
-                    Text you want to underline
                   </a>
                 </div>
               </div>
