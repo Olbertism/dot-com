@@ -17,11 +17,11 @@ library.add(faLayerGroup, faLanguage, faHome);
 function App() {
   return (
     <main
-      className={'h-screen text-black flex justify-center items-center m-auto'}
+      className={'h-screen w-full text-black p-2 md:p-3'}
     >
       <div
         className={
-          'bg-white h-[96%] w-[98%] border-black border-2 flex flex-col md:flex-row'
+          'h-full w-full bg-white border-black border-2 flex flex-col md:flex-row'
         }
       >
         <div className={'flex md:flex-col h-[95%] md:h-full grow'}>

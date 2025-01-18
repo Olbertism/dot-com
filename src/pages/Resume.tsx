@@ -212,7 +212,7 @@ export const Resume: FC = () => {
           </div>
         </div>
         <div className={'row-start-1 md:row-start-auto bg-green min-h-12'}>
-          <div className={'flex flex-row-reverse md:flex-col'}>
+          <div className={'flex flex-row-reverse md:flex-col border-black border-b-2 md:border-b-0'}>
             <div className='min-w-44 min-h-44 lg:flex lg:border-black lg:border-b-2'>
               <img
                 className={'w-44 h-44 grow md:w-auto md:h-auto lg:w-44 lg:h-44 lg:max-w-80 md:mx-auto lg:basis-1/3 lg:shrink lg:border-black lg:border-r-2'}

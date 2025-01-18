@@ -5,11 +5,16 @@ export const LandingPage: FC = () => {
     <article className='h-full'>
       <div className="grid md:grid-cols-3 h-full">
         <div className="md:col-span-2 bg-orange min-h-[40%] flex">
-          <div className={'p-2 my-auto w-full'}>
-            <div className={'2xl:flex 2xl:justify-end'}>
-              <div className={'2xl:flex 2xl:flex-col 2xl:w-[66%] '}>
-                <h1 className={'lg:text-8xl md:text-7xl text-6xl text-center'}>&ldquo;olbert•ism&rdquo;</h1>
-                <p><span className='italic'>noun</span> [u]</p>
+          <div className={'p-2 w-full'}>
+            <div className={'2xl:flex 2xl:justify-end h-full'}>
+              <div className={'flex flex-col 2xl:w-[66%] justify-between h-full'}>
+                <div className='basis-4/5 flex'>
+                  <h1 className={'lg:text-8xl md:text-7xl text-5xl text-center m-auto'}>&ldquo;olbert•ism&rdquo;</h1>
+                </div>
+                <div>
+                  <p><span className='italic'>noun</span> [u]</p>
+                  <p><span>/ˈɒlbətːɪzᵊm/</span></p>
+                </div>
               </div>
             </div>
           </div>
@@ -19,9 +24,11 @@ export const LandingPage: FC = () => {
             className={'flex h-full'}
           >
             <div className={'p-2 md:my-auto w-full h-[60%]'}>
-              <div>1. a personal webpage from a guy called Albert</div>
-              <div>2. the one true answer to everything, next to 42</div>
-              <div>3. hogwash</div>
+              <ol className='list-decimal list-inside text-lg leading-relaxed space-y-3'>
+                <li>a personal webpage from a guy called Albert</li>
+                <li>the one true answer to everything, next to 42</li>
+                <li>hogwash and hubris</li>
+              </ol>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { FC, useState } from 'react';
+import { mailArray, phoneArray } from '../util/obfuscators';
 
 export const ContactBox: FC = () => {
   const [contactButtonClicked, setContactButtonClicked] = useState(false);
@@ -44,9 +45,11 @@ export const ContactBox: FC = () => {
         )}
       >
         <p>
-          mail: {contactButtonClicked ? 'abcdefg@mail.com' : ''}
+          {contactButtonClicked ? <a href={'mailto:' + mailArray.join('')}>{mailArray.join('')}</a> : 'mail'}
         </p>
-        <p>phone: {contactButtonClicked ? '0000' : ''}</p>
+        <p>
+          {contactButtonClicked ? <a href={'tel:' + phoneArray.join('')}>{phoneArray.join('')}</a> : 'phone'}
+        </p>
       </div>
     </div>
   );

@@ -17,22 +17,18 @@ export const Contact: FC = () => {
                 <p>Albert Pichler
                 </p>
                 <div className='px-4'>
-                <ContactBox />
+                  <ContactBox />
                 </div>
-
                 <p>
-                  address: Petrusgasse 5/2/11, 1030 Vienna
+                  Address: Petrusgasse 5/2/11, 1030 Vienna
                 </p>
                 <h2>Audiovisual media services</h2>
-
                 <p>Responsible regulatory or supervisory authority: Communications Authority Austria (KommAustria), https://www.rtr.at</p>
                 <h2>
                   EU dispute resolution
                 </h2>
-
                 <p>
-                  In accordance with the regulation on online dispute resolution in consumer matters (ODR regulation), we would like to inform you about the online dispute resolution platform (OS platform).
-                  Consumers have the opportunity to submit complaints to the European Commission's online dispute resolution platform at https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=DE. You can find the necessary contact details above in our legal notice.</p>
+                  In accordance with the regulation on online dispute resolution in consumer matters (ODR regulation), we would like to inform you about the online dispute resolution platform (OS platform). Consumers have the opportunity to submit complaints to the European Commission's online dispute resolution platform at https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=DE. You can find the necessary contact details above in our legal notice.</p>
                 <p>
                   However, we would like to point out that we are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
                 <h2>
@@ -47,14 +43,9 @@ export const Contact: FC = () => {
                 <p>
                   If you notice problematic or illegal content, please contact us immediately so that we can remove the illegal content. You can find the contact details in the imprint.
                 </p>
-
-
                 <h2>
                   Liability for links on this website
                 </h2>
-
-
-
                 <p>
                   Our website contains links to other websites for whose content we are not responsible. We are not liable for linked websites because we had and have no knowledge of any illegal activities, we have not noticed any such illegalities to date and we would remove links immediately if we became aware of any illegalities.
                 </p>
@@ -62,29 +53,23 @@ export const Contact: FC = () => {
                   If you notice any illegal links on our website, please contact us. You can find the contact details in the imprint.
                 </p>
                 <h2>Copyright notice</h2>
-
                 <p>
                   All content on this website (images, photos, texts, videos) is subject to copyright. Please ask us before you distribute, copy or use the content of this website, such as republishing it on other websites. If necessary, we will legally pursue the unauthorized use of parts of the content of our site.
                 </p>
-
                 <p>
                   If you find content on this website that violates copyright, please contact us.
                 </p>
 
                 <h2>
-                  Image credits
+                  Copyrights
                 </h2>
                 <p>
                   The images, photos and graphics on this website are protected by copyright.
                 </p>
-
                 <p>
-                  The image rights belong to:
-                  Photographer Max Mustermann
-                  Photographer Pia Musterfrau
+                  The image rights for all images on the resume page belong to Albert Pichler
                 </p>
-
-
+                <p>Other images have the ownerships stated underneath them.</p>
                 <p>
                   All texts are protected by copyright.
                 </p>
