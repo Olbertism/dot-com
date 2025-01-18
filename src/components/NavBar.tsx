@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 export const NavBar: FC = () => {
   return (
-    <nav className={'flex flex-col md:flex-row h-1/2 md:h-12 md:w-1/2'}>
+    <nav className={'flex flex-col md:flex-row h-1/2 md:h-12 md:w-1/2 xl:w-1/3'}>
       <NavLink
         to="resume"
         className={({ isActive }) =>

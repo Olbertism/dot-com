@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
+import { FC } from 'react';
 
 export const ResumeSection: FC<ResumeSectionProps> = ({
   logoPath,
@@ -17,7 +17,7 @@ export const ResumeSection: FC<ResumeSectionProps> = ({
         alignment === 'right' ? '2xl:justify-start' : '2xl:justify-end',
       )}
     >
-      <div className={'flex 2xl:w-[66%]'}>
+      <div className={'flex xl:w-[85%] 2xl:w-[66%]'}>
         <div className={'min-w-12 max-w-12 pt-2 pr-1'}>
           {logoPath ? (
             <img src={logoPath} alt={companyName + ' logo'} />

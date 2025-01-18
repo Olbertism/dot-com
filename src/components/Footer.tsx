@@ -7,7 +7,7 @@ export const Footer: FC = () => {
   return (
     <div
       className={
-        'border-black border-t-2 md:border-t-0 md:border-l-2 basis-1/12 max-h-12 md:max-h-full md:max-w-14 flex md:flex-col'
+        'border-black border-t-2 md:border-t-0 md:border-l-2 basis-1/12 max-h-12 md:max-h-full md:min-w-14 md:max-w-14 flex md:flex-col'
       }
     >
       <div
@@ -27,7 +27,7 @@ export const Footer: FC = () => {
           'flex justify-evenly md:flex-col basis-1/3 md:basis-1/5 gap-3 md:gap-2 my-auto md:my-0 px-3 md:px-1'
         }
       >
-        <a href={'https://www.linkedin.com/in/albert-pichler/'} target={'_blank'} rel={'noopener'} className={'md:m-auto'}>
+        <a href={'https://www.linkedin.com/in/albert-pichler/'} target={'_blank'} rel={'noopener'} className={'md:mx-auto'}>
           <svg className={'w-7 h-7 text-grey hover:cursor-pointer fill-grey hover:fill-black'} viewBox="0 0 72 72">
             <g fill-rule="evenodd">
               <path
@@ -40,7 +40,7 @@ export const Footer: FC = () => {
             </g>
           </svg>
         </a>
-        <a href={'https://github.com/Olbertism/'} target={'_blank'} rel={'noopener'} className={'md:m-auto'}>
+        <a href={'https://github.com/Olbertism/'} target={'_blank'} rel={'noopener'} className={'md:mx-auto'}>
           <svg className={'w-7 h-7 text-grey hover:cursor-pointer fill-grey hover:fill-black'} viewBox="0 0 1024 1024">
             <path
               fill-rule="evenodd"

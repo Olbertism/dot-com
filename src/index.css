@@ -9,6 +9,7 @@
   }
   h2 {
     @apply text-2xl;
+    @apply leading-relaxed;
     @apply [&:not(:first-child)]:mt-2;
   }
   h3 {

@@ -1,10 +1,8 @@
-import classNames from 'classnames';
-import { FC, useMemo, useState } from 'react';
+import { FC, useMemo } from 'react';
 import { ContactBox } from '../components/ContactBox.tsx';
 import { ResumeSection } from '../components/ResumeSection.tsx';
 
 export const Resume: FC = () => {
-  const [contactButtonClicked, setContactButtonClicked] = useState(false);
 
   const ResumeSections3Binfra = useMemo(() => {
     return (
@@ -186,9 +184,9 @@ export const Resume: FC = () => {
       <div className={'flex border-black border-b-2 md:hidden'}>
         <h1 className={'md:hidden mx-auto leading-loose text-3xl'}>resume</h1>
       </div>
-      <div className="grid md:grid-cols-3">
-        <div className="md:col-span-2">
-          <div className={'p-2'}>
+      <div className="grid md:grid-cols-3 xl:grid-cols-4">
+        <div className="md:col-span-2 xl:col-span-3">
+          <div className={'p-2 xl:px-4'}>
             <div className={'2xl:flex 2xl:justify-end'}>
               <div className={'2xl:flex 2xl:flex-col 2xl:w-[66%]'}>
                 <h1 className={'hidden md:block'}>resume</h1>
@@ -224,8 +222,8 @@ export const Resume: FC = () => {
               <div className='hidden lg:block lg:basis-2/3 lg:grow lg:bg-blue' />
             </div>
 
-            <div className={'flex flex-col justify-evenly basis-2/3 px-3 py-2 md:gap-2'}>
-              <h2 className={'mx-auto leading-loose text-xl md:text-2xl'}>Albert Pichler</h2>
+            <div className={'flex flex-col justify-evenly basis-2/3 px-3 py-2 xl:py-3 md:gap-2 xl:gap-4'}>
+              <h2 className={'mx-auto leading-loose text-xl md:text-2xl xl:text-3xl'}>Albert Pichler</h2>
               <div className={'m-auto flex flex-col gap-2 md:gap-3'}>
                 <div className={'px-3'}>
                   <ContactBox />
@@ -245,8 +243,8 @@ export const Resume: FC = () => {
           </div>
         </div>
         <div className={'bg-blue border-black border-t-2 min-h-12'} />
-        <div className="md:col-span-2 border-black border-t-2">
-          <div className={'p-2'}>
+        <div className="md:col-span-2 xl:col-span-3 border-black border-t-2">
+          <div className={'p-2 xl:px-4'}>
             <h2>education</h2>
             <ResumeSection
               logoPath={'../../univie_logo.jpg'}
@@ -274,8 +272,8 @@ export const Resume: FC = () => {
             />
           </div>
         </div>
-        <div className="md:col-span-2 border-black border-t-2">
-          <div className={'p-2'}>
+        <div className="md:col-span-2  xl:col-span-3 border-black border-t-2">
+          <div className={'p-2 xl:px-4'}>
             <div className={'2xl:flex 2xl:justify-end'}>
               <h2 className={'2xl:w-[66%]'}>other &amp; trivia</h2>
             </div>

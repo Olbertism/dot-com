@@ -12,7 +12,7 @@ export const ContactBox: FC = () => {
   return (
     <div
       className={classNames(
-        'w-full relative infobox-area',
+        'w-full max-w-80 relative infobox-area',
         contactButtonClicked ? 'area-expand' : '',
       )}
     >
