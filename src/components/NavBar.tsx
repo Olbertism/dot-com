@@ -7,8 +7,8 @@ export const NavBar: FC = () => {
       <NavLink
         to="resume"
         className={({ isActive }) =>
-          (isActive ? 'active bg-orange ' : '') +
-          'hover:bg-orange h-full md:h-[calc(3rem-2px)] md:w-full w-[calc(2.25rem-2px)] flex flex-col justify-end md:justify-center border-black border-b-2 md:border-r-2 md:border-b-0 md:pl-1'
+          (isActive ? 'active bg-orange dark:bg-dark-orange ' : '') +
+          'hover:bg-orange dark:hover:bg-dark-orange h-full md:h-[calc(3rem-2px)] md:w-full w-[calc(2.25rem-2px)] flex flex-col justify-end md:justify-center border-black dark:border-white border-b-2 md:border-r-2 md:border-b-0 md:pl-1'
         }
       >
         <p className={'-rotate-90 md:rotate-0 pl-3'}>resume</p>
@@ -17,8 +17,8 @@ export const NavBar: FC = () => {
       <NavLink
         to="blog"
         className={({ isActive }) =>
-          (isActive ? 'active bg-blue ' : '') +
-          'hover:bg-blue h-full md:h-[calc(3rem-2px)] md:w-full w-[calc(2.25rem-2px)] flex flex-col justify-end md:justify-center border-black border-b-2 md:border-r-2 md:border-b-0 md:pl-1'
+          (isActive ? 'active bg-blue dark:bg-dark-blue ' : '') +
+          'hover:bg-blue dark:hover:bg-dark-blue h-full md:h-[calc(3rem-2px)] md:w-full w-[calc(2.25rem-2px)] flex flex-col justify-end md:justify-center border-black dark:border-white border-b-2 md:border-r-2 md:border-b-0 md:pl-1'
         }
       >
         <p className={'-rotate-90 md:rotate-0 pl-3'}>blog</p>
@@ -27,8 +27,8 @@ export const NavBar: FC = () => {
       <NavLink
         to="contact"
         className={({ isActive }) =>
-          (isActive ? 'active bg-green ' : '') +
-          'hover:bg-green h-full md:h-[calc(3rem-2px)] md:w-full w-[calc(2.25rem-2px)] flex flex-col justify-end md:justify-center border-black border-b-2 md:border-b-0 md:border-r-2 md:pl-1'
+          (isActive ? 'active bg-green dark:bg-dark-green ' : '') +
+          'hover:bg-green dark:hover:bg-dark-green h-full md:h-[calc(3rem-2px)] md:w-full w-[calc(2.25rem-2px)] flex flex-col justify-end md:justify-center border-black dark:border-white border-b-2 md:border-b-0 md:border-r-2 md:pl-1'
         }
       >
         <p className={'-rotate-90 md:rotate-0 pl-3'}>contact</p>

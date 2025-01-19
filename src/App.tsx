@@ -17,17 +17,17 @@ library.add(faLayerGroup, faLanguage, faHome);
 function App() {
   return (
     <main
-      className={'h-screen w-full text-black p-2 md:p-3'}
+      className={'h-screen w-full text-black dark:text-dark-text dark:bg-black p-2 md:p-3'}
     >
       <div
         className={
-          'h-full w-full bg-white border-black border-2 flex flex-col md:flex-row'
+          'h-full w-full bg-white dark:bg-dark-bg border-black dark:border-white border-2 flex flex-col md:flex-row'
         }
       >
         <div className={'flex md:flex-col h-[95%] md:h-full grow'}>
           <div
             className={
-              'w-9 md:w-full h-full md:h-12 border-b-black md:border-b-2 border-r-2 md:border-r-0'
+              'w-9 md:w-full h-full md:h-12 border-b-black dark:border-b-white md:border-b-2 border-r-2 md:border-r-0'
             }
           >
             <NavBar />

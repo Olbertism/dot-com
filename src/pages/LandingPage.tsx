@@ -4,7 +4,7 @@ export const LandingPage: FC = () => {
   return (
     <article className='h-full'>
       <div className="grid md:grid-cols-3 h-full">
-        <div className="md:col-span-2 bg-orange min-h-[40%] flex">
+        <div className="md:col-span-2 bg-orange dark:bg-dark-orange min-h-[40%] flex">
           <div className={'p-2 w-full'}>
             <div className={'2xl:flex 2xl:justify-end h-full'}>
               <div className={'flex flex-col 2xl:w-[66%] justify-between h-full'}>
@@ -32,17 +32,17 @@ export const LandingPage: FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex border-black border-t-2 md:border-t-0">
+        <div className="flex border-black dark:border-white border-t-2 md:border-t-0">
           <div className='m-auto'>
             <h2 className='text-bold'>CV</h2>
           </div>
         </div>
-        <div className="bg-blue min-h-[40%] flex">
+        <div className="bg-blue dark:bg-dark-blue min-h-[40%] flex">
           <div className='m-auto'>
             <h2 className='text-bold'>latest post</h2>
           </div>
         </div>
-        <div className="bg-green min-h-[40%] flex">
+        <div className="bg-green dark:bg-dark-green min-h-[40%] flex">
           <div className='m-auto'>
             <h2 className='text-bold'>contact</h2>
           </div>

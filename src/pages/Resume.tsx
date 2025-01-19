@@ -181,7 +181,7 @@ export const Resume: FC = () => {
 
   return (
     <article className={'h-full'}>
-      <div className={'flex border-black border-b-2 md:hidden'}>
+      <div className={'flex border-black dark:border-white border-b-2 md:hidden'}>
         <h1 className={'md:hidden mx-auto leading-loose text-3xl'}>resume</h1>
       </div>
       <div className="grid md:grid-cols-3 xl:grid-cols-4">
@@ -211,15 +211,15 @@ export const Resume: FC = () => {
             />
           </div>
         </div>
-        <div className={'row-start-1 md:row-start-auto bg-green min-h-12'}>
-          <div className={'flex flex-row-reverse md:flex-col border-black border-b-2 md:border-b-0'}>
-            <div className='min-w-44 min-h-44 lg:flex lg:border-black lg:border-b-2'>
+        <div className={'row-start-1 md:row-start-auto bg-green dark:bg-dark-green min-h-12'}>
+          <div className={'flex flex-row-reverse md:flex-col border-black dark:border-white border-b-2 md:border-b-0'}>
+            <div className='min-w-44 min-h-44 lg:flex lg:border-black lg:dark:border-white lg:border-b-2'>
               <img
                 className={'w-44 h-44 grow md:w-auto md:h-auto lg:w-44 lg:h-44 lg:max-w-80 md:mx-auto lg:basis-1/3 lg:shrink lg:border-black lg:border-r-2'}
                 src={'../../me_sm.jpg'}
                 alt={'resume picture of Albert Pichler'}
               />
-              <div className='hidden lg:block lg:basis-2/3 lg:grow lg:bg-blue' />
+              <div className='hidden lg:block lg:basis-2/3 lg:grow lg:bg-blue lg:dark:bg-dark-blue' />
             </div>
 
             <div className={'flex flex-col justify-evenly basis-2/3 px-3 py-2 xl:py-3 md:gap-2 xl:gap-4'}>
@@ -242,7 +242,7 @@ export const Resume: FC = () => {
             </div>
           </div>
         </div>
-        <div className={'bg-blue border-black border-t-2 min-h-12'} />
+        <div className={'bg-blue dark:bg-dark-blue border-black border-t-2 min-h-12'} />
         <div className="md:col-span-2 xl:col-span-3 border-black border-t-2">
           <div className={'p-2 xl:px-4'}>
             <h2>education</h2>
@@ -291,7 +291,7 @@ export const Resume: FC = () => {
         </div>
         <div
           className={
-            'row-start-5 md:row-start-auto bg-orange border-black border-t-2 min-h-12'
+            'row-start-5 md:row-start-auto bg-orange dark:bg-dark-orange border-black border-t-2 min-h-12'
           }
         />
       </div>

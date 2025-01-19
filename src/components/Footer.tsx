@@ -1,33 +1,41 @@
+import { faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 
 export const Footer: FC = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDarkMode);
+
+    return () => document.documentElement.classList.remove('dark');
+  }, [isDarkMode])
+
   return (
     <div
       className={
-        'border-black border-t-2 md:border-t-0 md:border-l-2 basis-1/12 max-h-12 md:max-h-full md:min-w-14 md:max-w-14 flex md:flex-col'
+        'border-black dark:border-white border-t-2 md:border-t-0 md:border-l-2 basis-1/12 max-h-12 md:max-h-full md:min-w-14 md:max-w-14 flex md:flex-col'
       }
     >
       <div
         className={
-          'w-9 md:w-auto h-auto md:h-12 border-black border-r-2 md:border-r-0 md:border-b-2'
+          'w-9 md:w-auto h-auto md:h-12 border-black dark:border-white border-r-2 md:border-r-0 md:border-b-2'
         }
       >
         <div className='h-full w-full flex'>
-          <Link to={'/'} className='m-auto w-6 h-6' >
-            <FontAwesomeIcon icon='home' className='w-full h-full text-grey hover:text-black' />
+          <Link to={'/'} className='m-auto w-6 h-6' title='Back to home' >
+            <FontAwesomeIcon icon='home' className='w-full h-full text-grey hover:text-black dark:hover:text-dark-text' />
           </Link>
         </div>
       </div>
 
       <div
         className={
-          'flex justify-evenly md:flex-col basis-1/3 md:basis-1/5 gap-3 md:gap-2 my-auto md:my-0 px-3 md:px-1'
+          'flex justify-evenly md:flex-col gap-4 my-auto md:my-0 px-4 md:py-4 md:px-1'
         }
       >
-        <a href={'https://www.linkedin.com/in/albert-pichler/'} target={'_blank'} rel={'noopener'} className={'md:mx-auto'}>
-          <svg className={'w-7 h-7 text-grey hover:cursor-pointer fill-grey hover:fill-black'} viewBox="0 0 72 72">
+        <a title='Go to linkedIn page' href={'https://www.linkedin.com/in/albert-pichler/'} target={'_blank'} rel={'noopener'} className={'md:mx-auto'}>
+          <svg className={'w-7 h-7 text-grey hover:cursor-pointer fill-grey hover:fill-black dark:hover:fill-dark-text'} viewBox="0 0 72 72">
             <g fill-rule="evenodd">
               <path
                 d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z"
@@ -39,8 +47,8 @@ export const Footer: FC = () => {
             </g>
           </svg>
         </a>
-        <a href={'https://github.com/Olbertism/'} target={'_blank'} rel={'noopener'} className={'md:mx-auto'}>
-          <svg className={'w-7 h-7 text-grey hover:cursor-pointer fill-grey hover:fill-black'} viewBox="0 0 1024 1024">
+        <a title='Go to github page' href={'https://github.com/Olbertism/'} target={'_blank'} rel={'noopener'} className={'md:mx-auto'}>
+          <svg className={'w-7 h-7 text-grey hover:cursor-pointer fill-grey hover:fill-black dark:hover:fill-dark-text'} viewBox="0 0 1024 1024">
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -49,6 +57,12 @@ export const Footer: FC = () => {
             />
           </svg>
         </a>
+        <button
+          onClick={() => { setIsDarkMode((prevState) => !prevState) }}
+          title='Toggle dark mode'
+          className='w-6 h-6 text-grey hover:cursor-pointer hover:text-black md:mx-auto my-auto dark:hover:text-dark-text'>
+          <FontAwesomeIcon icon={faCircleHalfStroke} className='w-full h-full' />
+        </button>
         {/* <div>
           <FontAwesomeIcon icon={faMoon} className={'w-8 h-8 text-grey hover:cursor-pointer'} />
         </div> */}

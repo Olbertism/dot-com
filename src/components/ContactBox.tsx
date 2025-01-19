@@ -19,7 +19,7 @@ export const ContactBox: FC = () => {
     >
       <button
         className={
-          'border-black border-2 bg-white px-2 py-1 relative z-20 text-sm md:text-base'
+          'border-black border-2 bg-white dark:bg-dark-bg px-2 py-1 relative z-20 text-sm md:text-base'
         }
         onClick={() =>
           setContactButtonClicked((prevState) => !prevState)
@@ -44,10 +44,10 @@ export const ContactBox: FC = () => {
           contactButtonClicked ? 'box-slide' : '',
         )}
       >
-        <p>
+        <p className={classNames(contactButtonClicked ? '' : 'text-green')}>
           {contactButtonClicked ? <a href={'mailto:' + mailArray.join('')}>{mailArray.join('')}</a> : 'mail'}
         </p>
-        <p>
+        <p className={classNames(contactButtonClicked ? '' : 'text-green')}>
           {contactButtonClicked ? <a href={'tel:' + phoneArray.join('')}>{phoneArray.join('')}</a> : 'phone'}
         </p>
       </div>
