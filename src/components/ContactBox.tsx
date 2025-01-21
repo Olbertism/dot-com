@@ -5,21 +5,23 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { FC, useState } from 'react';
+import { W } from 'react-router/dist/development/fog-of-war-DLtn2OLr';
 import { mailArray, phoneArray } from '../util/obfuscators';
 
-export const ContactBox: FC = () => {
+export const ContactBox: FC<ContactBoxProps> = ({ width }) => {
   const [contactButtonClicked, setContactButtonClicked] = useState(false);
 
   return (
     <div
       className={classNames(
-        'w-full max-w-80 relative infobox-area',
+        'w-full relative infobox-area',
         contactButtonClicked ? 'area-expand' : '',
       )}
+      style={width ? { width: width } : { maxWidth: '20rem' }}
     >
       <button
         className={
-          'border-black border-2 bg-white dark:bg-dark-bg px-2 py-1 relative z-20 text-xs sm:text-sm md:text-base'
+          'w-full min-h-11 border-black border-2 bg-white dark:bg-dark-bg px-2 py-1 relative z-20 text-xs sm:text-sm md:text-base'
         }
         onClick={() =>
           setContactButtonClicked((prevState) => !prevState)
@@ -53,4 +55,8 @@ export const ContactBox: FC = () => {
       </div>
     </div>
   );
+}
+
+interface ContactBoxProps {
+  width?: number;
 }

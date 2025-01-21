@@ -214,7 +214,6 @@ export const Resume: FC = () => {
         <div className={'row-start-1 md:row-start-auto bg-green dark:bg-dark-green min-h-12'}>
           <div className={'flex flex-row-reverse md:flex-col border-black dark:border-white border-b-2 md:border-b-0'}>
             <div className='basis-2/5 lg:flex lg:border-black lg:dark:border-white lg:border-b-2'>
-
               <picture className={'md:w-auto md:h-auto  lg:max-w-80 md:mx-auto lg:border-black lg:border-r-2'}>
                 <source media="(max-width: 480px)" srcSet="me-248w.jpg" />
                 <source media="(min-width: 481px)" srcSet="me-300w.jpg" />
@@ -223,10 +222,8 @@ export const Resume: FC = () => {
                 <source media="(min-width: 1024px)" srcSet="me-300w.jpg" />
                 <img src="me-400w.jpg" alt="Resume picture of Albert Pichler" />
               </picture>
-
               <div className='hidden lg:block lg:basis-2/3 lg:grow lg:bg-blue lg:dark:bg-dark-blue' />
             </div>
-
             <div className={'flex flex-col justify-evenly basis-2/3 px-3 py-2 xl:py-3 md:gap-2 xl:gap-4'}>
               <h2 className={'mx-auto sm:leading-loose text-lg sm:text-xl md:text-2xl xl:text-3xl'}>Albert Pichler</h2>
               <div className={'m-auto flex flex-col gap-2 md:gap-3'}>

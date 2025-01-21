@@ -5,7 +5,7 @@ export const Contact: FC = () => {
   return (
     <article className={'md:h-full'}>
       <div className={'flex'}>
-        <h1 className={'md:hidden mx-auto leading-loose'}>contact &amp; imprint</h1>
+        <h1 className={'md:hidden mx-auto leading-loose text-3xl'}>contact &amp; imprint</h1>
       </div>
       <div className="grid md:grid-cols-3 md:h-full">
         <div className="md:col-span-2">
@@ -16,8 +16,8 @@ export const Contact: FC = () => {
                 <h2>Information about the service provider</h2>
                 <p>Albert Pichler
                 </p>
-                <div className='px-4'>
-                  <ContactBox />
+                <div className='px-4 mt-2'>
+                  <ContactBox width={300}/>
                 </div>
                 <p>
                   Address: Petrusgasse 5/2/11, 1030 Vienna
