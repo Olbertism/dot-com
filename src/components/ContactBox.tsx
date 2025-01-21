@@ -5,7 +5,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { FC, useState } from 'react';
-import { W } from 'react-router/dist/development/fog-of-war-DLtn2OLr';
 import { mailArray, phoneArray } from '../util/obfuscators';
 
 export const ContactBox: FC<ContactBoxProps> = ({ width }) => {
