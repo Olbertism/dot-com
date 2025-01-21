@@ -213,28 +213,33 @@ export const Resume: FC = () => {
         </div>
         <div className={'row-start-1 md:row-start-auto bg-green dark:bg-dark-green min-h-12'}>
           <div className={'flex flex-row-reverse md:flex-col border-black dark:border-white border-b-2 md:border-b-0'}>
-            <div className='min-w-44 min-h-44 lg:flex lg:border-black lg:dark:border-white lg:border-b-2'>
-              <img
-                className={'w-44 h-44 grow md:w-auto md:h-auto lg:w-44 lg:h-44 lg:max-w-80 md:mx-auto lg:basis-1/3 lg:shrink lg:border-black lg:border-r-2'}
-                src={'../../me_sm.jpg'}
-                alt={'resume picture of Albert Pichler'}
-              />
+            <div className='basis-2/5 lg:flex lg:border-black lg:dark:border-white lg:border-b-2'>
+
+              <picture className={'md:w-auto md:h-auto  lg:max-w-80 md:mx-auto lg:border-black lg:border-r-2'}>
+                <source media="(max-width: 480px)" srcSet="me-248w.jpg" />
+                <source media="(min-width: 481px)" srcSet="me-300w.jpg" />
+                <source media="(min-width: 640px)" srcSet="me-400w.jpg" />
+                <source media="(min-width: 768px)" srcSet="me-400w.jpg" />
+                <source media="(min-width: 1024px)" srcSet="me-300w.jpg" />
+                <img src="me-400w.jpg" alt="Resume picture of Albert Pichler" />
+              </picture>
+
               <div className='hidden lg:block lg:basis-2/3 lg:grow lg:bg-blue lg:dark:bg-dark-blue' />
             </div>
 
             <div className={'flex flex-col justify-evenly basis-2/3 px-3 py-2 xl:py-3 md:gap-2 xl:gap-4'}>
-              <h2 className={'mx-auto leading-loose text-xl md:text-2xl xl:text-3xl'}>Albert Pichler</h2>
+              <h2 className={'mx-auto sm:leading-loose text-lg sm:text-xl md:text-2xl xl:text-3xl'}>Albert Pichler</h2>
               <div className={'m-auto flex flex-col gap-2 md:gap-3'}>
-                <div className={'px-3'}>
+                <div className={'md:px-3'}>
                   <ContactBox />
                 </div>
                 <div className={'flex'}>
-                  <a href={'https://github.com/Olbertism/'} target={'_blank'} rel='noopener' className={'m-auto hover:decoration-2'}>
+                  <a href={'https://github.com/Olbertism/'} target={'_blank'} rel='noopener' className={'m-auto hover:decoration-2 text-xs sm:text-sm md:text-base'}>
                     <span>→</span> github portfolio
                   </a>
                 </div>
                 <div className={'flex'}>
-                  <a href={'https://www.linkedin.com/in/albert-pichler/'} rel='noopener' target={'_blank'} className={'m-auto hover:decoration-2'}>
+                  <a href={'https://www.linkedin.com/in/albert-pichler/'} rel='noopener' target={'_blank'} className={'m-auto hover:decoration-2 text-xs sm:text-sm md:text-base'}>
                     <span>→</span> linkedIn
                   </a>
                 </div>

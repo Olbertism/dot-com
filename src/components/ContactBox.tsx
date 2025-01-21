@@ -19,7 +19,7 @@ export const ContactBox: FC = () => {
     >
       <button
         className={
-          'border-black border-2 bg-white dark:bg-dark-bg px-2 py-1 relative z-20 text-sm md:text-base'
+          'border-black border-2 bg-white dark:bg-dark-bg px-2 py-1 relative z-20 text-xs sm:text-sm md:text-base'
         }
         onClick={() =>
           setContactButtonClicked((prevState) => !prevState)
@@ -40,7 +40,7 @@ export const ContactBox: FC = () => {
       </button>
       <div
         className={classNames(
-          'text-sm md:text-base border-black border-b-2 border-l-2 border-r-2 px-2 py-1 absolute top-0 w-full infobox',
+          'text-xs sm:text-sm md:text-base border-black border-b-2 border-l-2 border-r-2 px-2 py-1 absolute top-0 w-full infobox',
           contactButtonClicked ? 'box-slide' : '',
         )}
       >
