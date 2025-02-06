@@ -226,7 +226,7 @@ export const Resume: FC = () => {
             </div>
             <div className={'flex flex-col justify-evenly basis-2/3 px-3 py-2 xl:py-3 md:gap-2 xl:gap-4'}>
               <h2 className={'mx-auto sm:leading-loose text-lg sm:text-xl md:text-2xl xl:text-3xl'}>Albert Pichler</h2>
-              <div className={'m-auto flex flex-col gap-2 md:gap-3'}>
+              <div className={'m-auto flex flex-col md:gap-3 h-full pt-2 gap-1'}>
                 <div className={'md:px-3'}>
                   <ContactBox />
                 </div>
