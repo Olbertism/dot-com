@@ -13,14 +13,14 @@ export const ContactBox: FC<ContactBoxProps> = ({ width }) => {
   return (
     <div
       className={classNames(
-        'w-full relative infobox-area',
+        'w-full relative infobox-area h-full',
         contactButtonClicked ? 'area-expand' : '',
       )}
       style={width ? { width: width } : { maxWidth: '20rem' }}
     >
       <button
         className={
-          'w-full min-h-11 border-black border-2 bg-white dark:bg-dark-bg px-2 py-1 relative z-20 text-xs sm:text-sm md:text-base'
+          'w-full min-h-16 md:min-h-20 border-black border-2 bg-white dark:bg-dark-bg px-2 md:py-1 relative z-20 text-xs sm:text-sm md:text-base'
         }
         onClick={() =>
           setContactButtonClicked((prevState) => !prevState)
@@ -41,14 +41,14 @@ export const ContactBox: FC<ContactBoxProps> = ({ width }) => {
       </button>
       <div
         className={classNames(
-          'text-xs sm:text-sm md:text-base border-black border-b-2 border-l-2 border-r-2 px-2 py-1 absolute top-0 w-full infobox',
+          'text-xs sm:text-sm md:text-base border-black border-b-2 border-l-2 border-r-2 p-2 pt-3 sm:pt-1 md:pt-3 absolute top-0 w-full bg-white dark:bg-dark-bg space-y-2 infobox',
           contactButtonClicked ? 'box-slide' : '',
         )}
       >
-        <p className={classNames(contactButtonClicked ? '' : 'text-green')}>
+        <p className={classNames(contactButtonClicked ? '' : 'text-white dark:text-bg-dark')}>
           {contactButtonClicked ? <a href={'mailto:' + mailArray.join('')}>{mailArray.join('')}</a> : 'mail'}
         </p>
-        <p className={classNames(contactButtonClicked ? '' : 'text-green')}>
+        <p className={classNames(contactButtonClicked ? '' : 'text-white dark:text-bg-dark')}>
           {contactButtonClicked ? <a href={'tel:' + phoneArray.join('')}>{phoneArray.join('')}</a> : 'phone'}
         </p>
       </div>

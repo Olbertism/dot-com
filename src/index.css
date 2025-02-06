@@ -55,13 +55,15 @@ h1 {
 
 .infobox-area {
   transition: height 0.25s linear;
-  height: 3.5rem;
-  @apply md:h-[4rem];
+  height: 4rem;
+  @apply sm:h-[4.5rem];
+  @apply md:h-[5rem];
 }
 
 .area-expand {
-  height: 6rem;
-  @apply md:h-[8rem];
+  height: 8rem;
+  @apply sm:h-[9rem];
+  @apply md:h-[10rem];
   transition: height 0.25s ease-in;
 }
 
