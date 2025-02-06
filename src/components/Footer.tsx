@@ -24,7 +24,7 @@ export const Footer: FC = () => {
       >
         <div className='h-full w-full flex'>
           <Link to={'/'} className='m-auto w-6 h-6' title='Back to home' >
-            <FontAwesomeIcon icon='home' className='w-full h-full text-grey hover:text-black dark:hover:text-dark-text' />
+            <FontAwesomeIcon icon='home' className='w-full! h-full! text-grey hover:text-black dark:hover:text-dark-text' />
           </Link>
         </div>
       </div>
@@ -61,11 +61,8 @@ export const Footer: FC = () => {
           onClick={() => { setIsDarkMode((prevState) => !prevState) }}
           title='Toggle dark mode'
           className='w-6 h-6 text-grey hover:cursor-pointer hover:text-black md:mx-auto my-auto dark:hover:text-dark-text'>
-          <FontAwesomeIcon icon={faCircleHalfStroke} className='w-full h-full' />
+          <FontAwesomeIcon icon={faCircleHalfStroke} className='w-full! h-full!' />
         </button>
-        {/* <div>
-          <FontAwesomeIcon icon={faMoon} className={'w-8 h-8 text-grey hover:cursor-pointer'} />
-        </div> */}
       </div>
     </div>
   );
