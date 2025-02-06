@@ -28,8 +28,8 @@ export const ContactBox: FC<ContactBoxProps> = ({ width }) => {
       >
         <div className='flex gap-1'>
           <div className='basis-1/6 text-grey flex'>
-            <FontAwesomeIcon icon={faHandPointer} className='md:hidden w-5 h-5 m-auto' />
-            <FontAwesomeIcon icon={faMousePointer} className='hidden md:block w-5 h-5 m-auto' />
+            <FontAwesomeIcon icon={faHandPointer} className='md:hidden! w-5 h-5! m-auto' />
+            <FontAwesomeIcon icon={faMousePointer} className='hidden! md:block! w-5 h-5! m-auto' />
           </div>
           <div className='text-left hover:decoration-2 underline'>
             <span className='hidden md:inline'>click</span>

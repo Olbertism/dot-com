@@ -1,16 +1,52 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-black: #011627;
+  --color-dark-bg: #1a2d3c;
+  --color-dark-text: #dddedf;
+  --color-white: #f6f7f8;
+  --color-orange: #ff6a53;
+  --color-dark-orange: #cc5442;
+  --color-blue: #587291;
+  --color-dark-blue: #465b74;
+  --color-green: #739e82;
+  --color-dark-green: #5c7e68;
+  --color-grey: #64717f;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @layer base {
   main {
     @apply text-sm;
     @apply md:text-base;
   }
+  h1 {
+    @apply text-5xl;
+  }
   h2 {
     @apply text-2xl;
     @apply md:leading-relaxed;
-    @apply [&:not(:first-child)]:mt-2;
+    @apply not-first:mt-2;
   }
   h3 {
     @apply text-lg;
@@ -46,11 +82,6 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 .infobox-area {
