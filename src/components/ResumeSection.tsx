@@ -24,7 +24,7 @@ export const ResumeSection: FC<ResumeSectionProps> = ({
           ) : faIconName ? (
             <div className={'w-9 h-9 text-black'}>
               <FontAwesomeIcon
-                className={'w-auto h-auto'}
+                className={'w-auto! h-auto!'}
                 icon={faIconName as IconProp}
               />
             </div>
