@@ -20,7 +20,7 @@ export const ContactBox: FC<ContactBoxProps> = ({ width }) => {
     >
       <button
         className={
-          'w-full min-h-16 md:min-h-20 border-black border-2 bg-white dark:bg-dark-bg px-2 md:py-1 relative z-20 text-xs sm:text-sm md:text-base'
+          'w-full min-h-16 md:min-h-20 border-black border-2 bg-white dark:bg-dark-bg px-2 md:py-1 relative z-20 text-xs sm:text-sm md:text-base cursor-pointer'
         }
         onClick={() =>
           setContactButtonClicked((prevState) => !prevState)
