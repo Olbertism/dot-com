@@ -4,9 +4,12 @@ import {
   faLanguage,
   faLayerGroup,
 } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router';
+import { Slide, toast, ToastContainer } from 'react-toastify';
 import { Footer } from './components/Footer.tsx';
 import { NavBar } from './components/NavBar.tsx';
+import { ToastMessage } from './components/ToastMessage.tsx';
 import { BlogContentPage } from './pages/BlogContentPage.tsx';
 import { BlogLandingPage } from './pages/BlogLandingPage.tsx';
 import { Contact } from './pages/Contact.tsx';
@@ -15,7 +18,16 @@ import { Resume } from './pages/Resume.tsx';
 
 library.add(faLayerGroup, faLanguage, faHome);
 
-function App() {
+export const App = () => {
+  // display toast on first load
+  useEffect(() => {
+    toast(ToastMessage, {
+      className: 'border-2 border-black',
+      position: 'bottom-right',
+      transition: Slide,
+    });
+  }, []);
+
   return (
     <main
       className={
@@ -49,8 +61,9 @@ function App() {
         </div>
         <Footer />
       </div>
+      <ToastContainer />
     </main>
   );
-}
+};
 
 export default App;
