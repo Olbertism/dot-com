@@ -7,7 +7,8 @@ import {
 import { Route, Routes } from 'react-router';
 import { Footer } from './components/Footer.tsx';
 import { NavBar } from './components/NavBar.tsx';
-import { Blog } from './pages/Blog.tsx';
+import { BlogContentPage } from './pages/BlogContentPage.tsx';
+import { BlogLandingPage } from './pages/BlogLandingPage.tsx';
 import { Contact } from './pages/Contact.tsx';
 import { LandingPage } from './pages/LandingPage.tsx';
 import { Resume } from './pages/Resume.tsx';
@@ -17,7 +18,9 @@ library.add(faLayerGroup, faLanguage, faHome);
 function App() {
   return (
     <main
-      className={'h-screen w-full text-black dark:text-dark-text dark:bg-black p-2 md:p-3'}
+      className={
+        'h-screen w-full text-black dark:text-dark-text dark:bg-black p-2 md:p-3'
+      }
     >
       <div
         className={
@@ -36,7 +39,10 @@ function App() {
             <Routes>
               <Route path={'/*'} index element={<LandingPage />} />
               <Route path="resume" element={<Resume />} />
-              <Route path="blog" element={<Blog />} />
+              <Route path="blog">
+                <Route index element={<BlogLandingPage />}></Route>
+                <Route path=":blogPageSlug" element={<BlogContentPage />} />
+              </Route>
               <Route path="contact" element={<Contact />} />
             </Routes>
           </div>
