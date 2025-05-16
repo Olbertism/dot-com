@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { Link } from 'react-router';
+import { BlogLandingPageGrid } from '../components/BlogLandingPageGrid';
 import { getAllBlogPages } from '../util/directus';
 
 export const BlogLandingPage: FC = () => {
@@ -22,27 +22,19 @@ export const BlogLandingPage: FC = () => {
   }, []);
 
   return (
-    <article className={'md:h-full'}>
+    <article className={'md:h-full h-[95%]'}>
       <div className={'flex'}>
         <h1 className={'md:hidden mx-auto leading-loose text-3xl'}>blog</h1>
       </div>
-      <div className={'p-2'}>
+      <div className={'md:p-2 h-full flex flex-col'}>
         <h1 className={'hidden md:block'}>blog</h1>
-        <h2>posts</h2>
+        <h2 className="border-b-2 border-black">posts</h2>
         {loading ? (
           <div>loading...</div>
         ) : fetchError ? (
           <div>error...</div>
         ) : (
-          <div className="grid">
-            {blogPosts.map((post) => {
-              return (
-                <Link to={post.slug}>
-                  <div>{post.title}</div>
-                </Link>
-              );
-            })}
-          </div>
+          <BlogLandingPageGrid gridEntries={blogPosts} />
         )}
       </div>
     </article>
