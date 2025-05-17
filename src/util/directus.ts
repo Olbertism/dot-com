@@ -9,7 +9,11 @@ export const getPage = async (slug: string) => {
   try {
     const pages = await directus.request(
       readItems('posts', {
-        fields: [{ slug }],
+        filter: {
+          slug: {
+            _eq: slug,
+          },
+        },
       }),
     );
     return pages[0];
