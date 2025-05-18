@@ -25,10 +25,24 @@ export const getPage = async (slug: string) => {
 
 export const getAllBlogPages = async () => {
   try {
-    const pages = await directus.request(readItems('posts'));
-    return pages;
+    const pages = await directus.request(
+      readItems('posts', {
+        filter: { status: { _eq: 'published' } },
+        sort: ['-date_created'],
+        fields: ['id', 'title', 'date_created', 'slug', 'publish_date'],
+      }),
+    );
+    return pages as blogPostLandingPageItem[];
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     console.log('TODO');
   }
 };
+
+export interface blogPostLandingPageItem {
+  id: number;
+  title: string;
+  slug: string;
+  date_created: string;
+  publish_date: string | null;
+}

@@ -2,13 +2,17 @@ import classNames from 'classnames';
 import parse from 'html-react-parser';
 import { createElement, FC, useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { orange } from '../util/colors';
+import { layoutColor, orange } from '../util/colors';
 import { getPage } from '../util/directus';
 
-const createLayoutSection = (content: React.JSX.Element[], color) => {
+const createLayoutSection = (
+  content: React.JSX.Element[],
+  color: layoutColor,
+) => {
   return (
     <div
       className={classNames(
+        'content-section',
         'flex',
         'flex-wrap',
         'flex-col',
@@ -16,7 +20,9 @@ const createLayoutSection = (content: React.JSX.Element[], color) => {
         !color.blogRightAlign && 'sm:flex-row-reverse',
       )}
     >
-      <div className="basis-2/3 p-2 border-t-2 border-black">{content}</div>
+      <div className="basis-2/3 p-3 border-t-2 border-black text-wrapper">
+        {content}
+      </div>
       <div
         className={classNames(
           'basis-1/3 min-h-16 border-t-2 border-black',
@@ -58,7 +64,7 @@ export const BlogContentPage: FC = () => {
     let currentH2Section: null | React.JSX.Element = null;
     let currentChildrenArray: React.JSX.Element[] = [];
 
-    let currentColor = orange;
+    let currentColor: layoutColor = orange;
 
     parsed.forEach((element, i) => {
       if (element.type === 'h2') {
@@ -71,7 +77,7 @@ export const BlogContentPage: FC = () => {
           currentChildrenArray = [];
           transformedContents.push(section);
           currentH2Section = null;
-          currentColor = currentColor.next;
+          currentColor = currentColor.next!; // assert non-null because null is only used in initialization
         }
         foundH2 = true;
         currentH2Section = element;
@@ -82,7 +88,7 @@ export const BlogContentPage: FC = () => {
         transformedContents.push(
           createElement(
             'div',
-            { className: 'px-2', key: `wrapper-${i}` },
+            { className: 'px-2 space-y-2 mb-2', key: `wrapper-${i}` },
             element,
           ),
         );
@@ -109,7 +115,7 @@ export const BlogContentPage: FC = () => {
         <div>unexpected error</div>
       ) : (
         <div>
-          <div className="p-2">
+          <div className="p-2 mb-2">
             <h1>{page.title}</h1>
           </div>
           <div className="flex flex-col">{transformContents(page.content)}</div>

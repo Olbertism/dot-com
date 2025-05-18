@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react';
 import { BlogLandingPageGrid } from '../components/BlogLandingPageGrid';
-import { getAllBlogPages } from '../util/directus';
+import { blogPostLandingPageItem, getAllBlogPages } from '../util/directus';
 
 export const BlogLandingPage: FC = () => {
-  const [blogPosts, setBlogPosts] = useState<Record<string, any>[]>([]);
+  const [blogPosts, setBlogPosts] = useState<blogPostLandingPageItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [fetchError, setFetchError] = useState(false);
 

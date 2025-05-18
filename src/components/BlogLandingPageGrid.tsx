@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import { FC, useCallback } from 'react';
 import { Link } from 'react-router';
+import { layoutColor, orange } from '../util/colors';
+import { blogPostLandingPageItem } from '../util/directus';
 
 export const BlogLandingPageGrid: FC<BlogLandingPageGridProps> = ({
   gridEntries,
@@ -8,6 +10,7 @@ export const BlogLandingPageGrid: FC<BlogLandingPageGridProps> = ({
   const GRIDCOLS = 3;
   const createGrid = useCallback(() => {
     const gridJSXArray = [];
+    let currentColor: layoutColor = orange;
 
     // It is necessary to include the amount of empty tiles in the length,
     // otherwise computations with the length will be erroneous.
@@ -47,12 +50,13 @@ export const BlogLandingPageGrid: FC<BlogLandingPageGridProps> = ({
               <div
                 className={classNames(
                   'border-b-2 border-black sm:row-start-auto',
-                  j === 2 && 'row-start-1 bg-orange',
-                  j === 0 && 'bg-green',
+                  currentColor.twBgClassName,
+                  j === 2 && 'row-start-1',
                 )}
                 key={`grid-element-empty-${currentArrayIndex}-${j}`}
               />,
             );
+            currentColor = currentColor.next!;
           } else {
             gridJSXArray.push(
               <div
@@ -81,12 +85,18 @@ export const BlogLandingPageGrid: FC<BlogLandingPageGridProps> = ({
   }, [gridEntries]);
 
   return (
-    <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full h-full">
-      {createGrid()}
-    </div>
+    <>
+      {gridEntries.length > 0 ? (
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full h-full">
+          {createGrid()}
+        </div>
+      ) : (
+        <p>No content available</p>
+      )}
+    </>
   );
 };
 
 interface BlogLandingPageGridProps {
-  gridEntries: Record<string, any>[];
+  gridEntries: blogPostLandingPageItem[];
 }
