@@ -16,7 +16,7 @@ export const getPage = async (slug: string) => {
         },
       }),
     );
-    return pages[0];
+    return pages[0] as blogPostItem;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     console.log('TODO');
@@ -44,5 +44,20 @@ export interface blogPostLandingPageItem {
   title: string;
   slug: string;
   date_created: string;
+  publish_date: string | null;
+}
+
+export interface blogPostItem {
+  id: number;
+  status: string;
+  sort: number | null;
+  user_created: string;
+  date_created: string;
+  user_updated: string;
+  date_updated: string;
+  slug: string;
+  title: string;
+  content: string | null;
+  image: string | null;
   publish_date: string | null;
 }

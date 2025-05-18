@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 import { createElement, FC, useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { layoutColor, orange } from '../util/colors';
-import { getPage } from '../util/directus';
+import { blogPostItem, getPage } from '../util/directus';
 
 const createLayoutSection = (
   content: React.JSX.Element[],
@@ -35,7 +35,7 @@ const createLayoutSection = (
 
 export const BlogContentPage: FC = () => {
   const [pageNotFound, setPageNotFound] = useState(false);
-  const [page, setPage] = useState<Record<string, any> | undefined>(undefined);
+  const [page, setPage] = useState<blogPostItem | undefined>(undefined);
   const [loading, setLoading] = useState(false);
   const { blogPageSlug } = useParams();
 
