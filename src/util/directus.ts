@@ -39,6 +39,83 @@ export const getAllBlogPages = async () => {
   }
 };
 
+export interface blockContent {
+  time: number;
+  version: string;
+  blocks: blockObject[];
+}
+
+export interface blockObject {
+  id: string;
+  type: 'paragraph' | 'header' | 'nestedlist' | 'code';
+  data: textBlockData | codeBlockData | headingBlockData | nestedListBlockData;
+}
+
+export type textBlockData = {
+  text: string;
+};
+
+export type codeBlockData = {
+  code: string;
+};
+
+export type headingBlockData = {
+  text: string;
+  level: number;
+};
+
+export type nestedListBlockData = {
+  style: string;
+  items: nestedListBlockDataItem[];
+};
+
+export type nestedListBlockDataItem = {
+  content: string;
+  items: nestedListBlockDataItem[];
+};
+
+export function isTextBlockData(data: unknown): data is textBlockData {
+  return (
+    typeof data === 'object' &&
+    data !== null &&
+    'text' in data &&
+    typeof data.text === 'string'
+  );
+}
+
+export function isCodeBlockData(data: unknown): data is codeBlockData {
+  return (
+    typeof data === 'object' &&
+    data !== null &&
+    'code' in data &&
+    typeof data.code === 'string'
+  );
+}
+
+export function isHeadingBlockData(data: unknown): data is headingBlockData {
+  return (
+    typeof data === 'object' &&
+    data !== null &&
+    'text' in data &&
+    'level' in data &&
+    typeof data.text === 'string' &&
+    typeof data.level === 'number'
+  );
+}
+
+export function isNestedListBlockData(
+  data: unknown,
+): data is nestedListBlockData {
+  return (
+    typeof data === 'object' &&
+    data !== null &&
+    'style' in data &&
+    'items' in data &&
+    typeof data.style === 'string' &&
+    Array.isArray(data.items)
+  );
+}
+
 export interface blogPostLandingPageItem {
   id: number;
   title: string;
@@ -60,4 +137,6 @@ export interface blogPostItem {
   content: string | null;
   image: string | null;
   publish_date: string | null;
+  blocks: blockContent;
+  toggle_blocks: boolean;
 }
