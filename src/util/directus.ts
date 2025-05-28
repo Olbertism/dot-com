@@ -1,6 +1,5 @@
 import { createDirectus, readItems, rest } from '@directus/sdk';
 
-console.log(import.meta.env.VITE_DIRECTUS_URL);
 export const directus = createDirectus(
   `http://${import.meta.env.VITE_DIRECTUS_URL}`,
 ).with(rest());
@@ -47,8 +46,14 @@ export interface blockContent {
 
 export interface blockObject {
   id: string;
-  type: 'paragraph' | 'header' | 'nestedlist' | 'code';
-  data: textBlockData | codeBlockData | headingBlockData | nestedListBlockData;
+  type: 'paragraph' | 'header' | 'nestedlist' | 'code' | 'image' | 'quote';
+  data:
+    | textBlockData
+    | codeBlockData
+    | headingBlockData
+    | nestedListBlockData
+    | imageBlockData
+    | quoteBlockData;
 }
 
 export type textBlockData = {
@@ -72,6 +77,31 @@ export type nestedListBlockData = {
 export type nestedListBlockDataItem = {
   content: string;
   items: nestedListBlockDataItem[];
+};
+
+export type imageBlockData = {
+  caption: string;
+  withBorder: boolean;
+  withBackground: boolean;
+  stretched: boolean;
+  file: imageBlockFileData;
+};
+export type imageBlockFileData = {
+  width: number;
+  height: number;
+  size: string;
+  name: string;
+  title: string;
+  extension: string;
+  fileId: string;
+  fileURL: string;
+  url: string;
+};
+
+export type quoteBlockData = {
+  text: string;
+  caption: string;
+  alignment: string;
 };
 
 export function isTextBlockData(data: unknown): data is textBlockData {
@@ -116,6 +146,80 @@ export function isNestedListBlockData(
   );
 }
 
+export function isImageBlockFileData(obj: unknown): obj is {
+  width: number;
+  height: number;
+  size: string;
+  name: string;
+  title: string;
+  extension: string;
+  fileId: string;
+  fileURL: string;
+  url: string;
+} {
+  if (typeof obj !== 'object' || obj === null) return false;
+
+  const file = obj as Record<string, unknown>;
+
+  return (
+    typeof file.width === 'number' &&
+    typeof file.height === 'number' &&
+    typeof file.size === 'string' &&
+    typeof file.name === 'string' &&
+    typeof file.title === 'string' &&
+    typeof file.extension === 'string' &&
+    typeof file.fileId === 'string' &&
+    typeof file.fileURL === 'string' &&
+    typeof file.url === 'string'
+  );
+}
+
+export function isImageBlockData(obj: unknown): obj is {
+  caption: string;
+  withBorder: boolean;
+  withBackground: boolean;
+  stretched: boolean;
+  file: {
+    width: number;
+    height: number;
+    size: string;
+    name: string;
+    title: string;
+    extension: string;
+    fileId: string;
+    fileURL: string;
+    url: string;
+  };
+} {
+  if (typeof obj !== 'object' || obj === null) return false;
+
+  const data = obj as Record<string, unknown>;
+
+  return (
+    typeof data.caption === 'string' &&
+    typeof data.withBorder === 'boolean' &&
+    typeof data.withBackground === 'boolean' &&
+    typeof data.stretched === 'boolean' &&
+    isImageBlockFileData(data.file)
+  );
+}
+
+export function isQuoteBlockData(obj: unknown): obj is {
+  text: string;
+  caption: string;
+  alignment: string;
+} {
+  if (typeof obj !== 'object' || obj === null) return false;
+
+  const quote = obj as Record<string, unknown>;
+
+  return (
+    typeof quote.text === 'string' &&
+    typeof quote.caption === 'string' &&
+    typeof quote.alignment === 'string'
+  );
+}
+
 export interface blogPostLandingPageItem {
   id: number;
   title: string;
@@ -137,6 +241,6 @@ export interface blogPostItem {
   content: string | null;
   image: string | null;
   publish_date: string | null;
-  blocks: blockContent;
+  blocks: blockContent | null;
   toggle_blocks: boolean;
 }

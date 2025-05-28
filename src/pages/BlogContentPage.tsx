@@ -2,6 +2,9 @@ import classNames from 'classnames';
 import parse from 'html-react-parser';
 import { createElement, FC, useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+import docco from 'react-syntax-highlighter/dist/esm/styles/hljs/docco';
 import { layoutColor, orange } from '../util/colors';
 import {
   blockContent,
@@ -10,10 +13,15 @@ import {
   getPage,
   isCodeBlockData,
   isHeadingBlockData,
+  isImageBlockData,
   isNestedListBlockData,
+  isQuoteBlockData,
   isTextBlockData,
+  nestedListBlockData,
 } from '../util/directus';
 import { createRandomString } from '../util/pseudo-random-string';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
 
 const createLayoutSection = (
   content: React.JSX.Element[],
@@ -59,7 +67,17 @@ const parseBlock: (block: blockObject) => React.JSX.Element = (
   }
 
   if (block.type === 'code' && isCodeBlockData(block.data)) {
-    return createElement('div', { key: block.id }, block.data.code);
+    // TODO language detection
+    const element = (
+      <SyntaxHighlighter language="javascript" style={docco}>
+        {block.data.code}
+      </SyntaxHighlighter>
+    );
+    return createElement(
+      'div',
+      { key: block.id, className: 'border-2 border-grey' },
+      element,
+    );
   }
 
   if (block.type === 'nestedlist' && isNestedListBlockData(block.data)) {
@@ -73,11 +91,47 @@ const parseBlock: (block: blockObject) => React.JSX.Element = (
             ? parseBlock({
                 id: createRandomString(8),
                 type: 'nestedlist',
-                data: { style: block.data.style, items: li.items },
+                data: {
+                  style: (block.data as nestedListBlockData).style,
+                  items: li.items,
+                },
               })
             : null,
         ]);
       }),
+    );
+  }
+
+  if (block.type === 'image' && isImageBlockData(block.data)) {
+    return createElement(
+      'img',
+      {
+        key: block.id,
+        src: `http://${import.meta.env.VITE_DIRECTUS_URL + block.data.file.url}/${block.data.file.name}`,
+        alt: block.data.caption,
+      },
+      null,
+    );
+  }
+
+  if (block.type === 'quote' && isQuoteBlockData(block.data)) {
+    const element = (
+      <>
+        <blockquote>
+          <p>{block.data.text}</p>
+        </blockquote>
+        <p>
+          <cite>{block.data.caption}</cite>
+        </p>
+      </>
+    );
+    return createElement(
+      'div',
+      {
+        key: block.id,
+        className: 'border-l-2 border-grey p-2',
+      },
+      element,
     );
   }
 
@@ -159,7 +213,8 @@ export const BlogContentPage: FC = () => {
     return transformedContents;
   }, []);
 
-  const parseBlockContents = useCallback((data: blockContent) => {
+  const parseBlockContents = useCallback((data: blockContent | null) => {
+    if (!data) return null;
     const parsedBlockContents: React.JSX.Element[] = [];
 
     let currentH2Block: null | blockObject = null;

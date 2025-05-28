@@ -64,6 +64,12 @@
     @apply underline-offset-4;
     @apply font-bold;
   }
+  blockquote p::before {
+    content: '\201C';
+  }
+  blockquote p::after {
+    content: '\201D';
+  }
   .content-section > .text-wrapper {
     @apply space-y-2;
   }
